@@ -18,10 +18,10 @@ public class Main {
             System.out.println("Input is not a number.\nEnter a whole number as a parameter!");
             return;
         }
-        System.out.println(number + " is " + (semiPrime(number) ? "" : "not ") + "a semiprime.");
+        System.out.println(number + " is " + (isSemiprime(number) ? "" : "not ") + "a semiprime.");
     }
 
-    static boolean semiPrime(int number) {
+    static boolean isSemiprime(int number) {
         if (number == 1) {
             return true;
         }
