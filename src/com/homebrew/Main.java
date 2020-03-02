@@ -1,7 +1,6 @@
 package com.homebrew;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class Main {
 
@@ -29,20 +28,11 @@ public class Main {
             return false;
         }
 
-        List<Integer> divisors = new ArrayList<>();
-
+        List<Integer> primeDivisors = new ArrayList<>();
         for (int i = 1; i < number; i++) {
-            if (number % i == 0) {
-                divisors.add(i);
+            if (number % i == 0 && isPrime(i)) {
+                primeDivisors.add(i);
             }
-        }
-
-        List<Integer> primeDivisors = divisors.stream()
-                .filter(n -> isPrime(n))
-                .collect(Collectors.toList());
-
-        if (primeDivisors.isEmpty()) {
-            return false;
         }
 
         for (int primeDivisor : primeDivisors) {
